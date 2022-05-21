@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimSim</title>
+  <script src="./utils.js"></script>
+  <script src="./index.js"> </script>
+  <style >
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #container {
+      position: absolute;
+      border: 1px dotted red;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  
+  <button id="add-rect">추가</button>
+  <button id="remove-rect">삭제</button>
+  
+  <div id="container"></div>
+
+  
+  <script>
+    const scalable = new ScalableLib({
+      id: 'container',
+      count: 3,
+    })
+    scalable.render();
+
+    const addRect = document.querySelector('#add-rect');
+    const removeRect = document.querySelector('#remove-rect');
+    
+    addRect.addEventListener('click', () => {
+      scalable.addRect();
+    })
+
+    removeRect.addEventListener('click', () => {
+      scalable.removeRect();
+    })
+
+  </script>
+</body>
+</html>
